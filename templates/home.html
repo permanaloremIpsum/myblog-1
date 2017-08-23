@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for post in postingan %}
+	<div class="blog-post">
+	<h2 class="blog-post-title"><a href="/article/{{post.slug}}">{{post.title|safe}}</a></h2>
+	<p class="blog-post-meta">{{post.created_on|date:"l, d F Y, H:i" }}. Category <a href="#">{{post.category}}</a></p>
+
+	{{post.content|safe}}
+	</div><!-- /.blog-post -->
+	{% endfor %}
+{% endblock %}
+
+
+{% block about %}
+<div class="sidebar-module sidebar-module-inset">
+<h4>About</h4>
+<p>Ini about</p>
+</div>
+{% endblock %}

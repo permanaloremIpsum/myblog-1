@@ -41,7 +41,6 @@
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
-          <a class="blog-nav-item" href="#">Category</a>
         </nav>
       </div>
     </div>
@@ -56,18 +55,13 @@
       <div class="row">
 
         <div class="col-sm-8 blog-main">
-          {% for post in postingan %}
           <div class="blog-post">
-            <h2 class="blog-post-title"><a href="/article/{{post.slug}}">{{post.title|safe}}</a></h2>
+            <h2 class="blog-post-title">{{post.title|safe}}</h2>
             <p class="blog-post-meta">{{post.created_on|date:"l, d F Y, H:i" }}. Category <a href="#">{{post.category}}</a></p>
 
             {{post.content|safe}}
+            <img src="{{post.image}}">
           </div><!-- /.blog-post -->
-          {% endfor %}
-
-          {% for cat in categories %}
-          {{cat}}
-          {% endfor %}
 
           <nav>
             <ul class="pager">
@@ -80,14 +74,14 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>About {{nama}}</h4>
+            <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">
             <h4>Category</h4>
             <ol class="list-unstyled">
               {% for cat in categories %}
-              <li><a href="/category/{{cat.id}}">{{cat.name}}</a></li>
+              <li><a href="">{{cat.name}}</a></li>
               {% endfor %}
             </ol>
           </div>
