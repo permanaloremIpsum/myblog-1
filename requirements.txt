@@ -5,6 +5,7 @@ gunicorn==19.7.1
 numpy==1.13.1
 olefile==0.44
 Pillow==4.2.1
+psycopg2==2.7.3
 pytz==2017.2
 scipy==0.19.1
 whitenoise==3.3.0
