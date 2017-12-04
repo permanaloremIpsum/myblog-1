@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from article.models import Category, Post
@@ -59,7 +60,8 @@ def loginview(request):
             login(request, auth_user)
             return redirect('/')
         else:
-            print "gagal silahkan cek user dan password anda"
+            messages.warning(
+                request, 'Gagal. Silahkan cek user dan password anda')
 
     return render(request, 'login.html', data)
 
