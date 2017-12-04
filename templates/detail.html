@@ -6,7 +6,7 @@
 		<p class="blog-post-meta">{{post.created_on|date:"l, d F Y, H:i" }}. Category <a href="#">{{post.category}}</a></p>
 
 		{{post.content|safe}}
-		<img src="{{post.image}}">
+		<img src="/media/{{post.image}}">
 	</div><!-- /.blog-post -->
 {% endblock %}
 

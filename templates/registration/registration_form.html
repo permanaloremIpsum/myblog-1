@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post" action=".">
+  {% csrf_token %}
+
+  {% for field in form.visible_fields %}
+  <div class="form-group">
+    <label>{{field.label}}</label>
+    {{field}}
+  </div>
+  {% endfor %}
+
+  <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+{% endblock %}
+
+{% block extraJS %}
+<script type="text/javascript">
+  {% for field in form.visible_fields %}
+    $( "#id_{{field.name}}" ).addClass( "form-control" );
+  {% endfor %}
+</script>
+{% endblock %}
