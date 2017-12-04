@@ -58,7 +58,7 @@ def loginview(request):
         auth_user = authenticate(username=username, password=password)
         if auth_user is not None:
             login(request, auth_user)
-            return redirect('/')
+            return redirect('/dashboard/')
         else:
             messages.warning(
                 request, 'Gagal. Silahkan cek user dan password anda')
@@ -89,3 +89,6 @@ def registrationview(request):
         form = RegistrationUserForm()
     data = {'form':form}
     return render(request, 'registration.html', data)
+
+def dashboard(request):
+    return render(request, 'dashboard.html')
