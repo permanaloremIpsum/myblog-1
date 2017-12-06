@@ -68,7 +68,7 @@ def loginview(request):
 
 def logoutview(request):
     logout(request)
-    return redirect('/')
+    return redirect('/login/')
 
 
 def registrationview(request):

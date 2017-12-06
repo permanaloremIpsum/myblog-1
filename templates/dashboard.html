@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 <div class="container">
   <h1>My Account</h1>
   <br>
@@ -22,6 +23,9 @@
   <a class="btn btn-default" href="/logout" role="button">Logout</a>
   </div>
 </div>
+{% else %}
+
+{% endif %}
 {% endblock %}
 
 
